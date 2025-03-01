@@ -66,4 +66,4 @@ Submit a Pull Request
 📬 Contact & Support
 🔹 Email: malleshpareet360@gmail.com
 🔹 LinkedIn: www.linkedin.com/in/mallesh-pareet
-🔹 GitHub: 221p 
+🔹 GitHub: https://github.com/221p
