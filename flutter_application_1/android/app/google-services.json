@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "468032481787",
+    "project_id": "nexamart-2ce57",
+    "storage_bucket": "nexamart-2ce57.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:468032481787:android:839eab1b61a8b9f48ac35e",
+        "android_client_info": {
+          "package_name": "com.example.NexaMart"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-B7Y9V7oB8ughNFr95M3T8RU80Npsonk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

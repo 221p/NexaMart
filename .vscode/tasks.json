@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "dart",
+			"command": "dart",
+			"cwd": "flutter_application_1",
+			"args": [
+				"doc",
+				"."
+			],
+			"problemMatcher": [],
+			"label": "dart: dart doc .",
+			"detail": "flutter_application_1",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

@@ -1,0 +1,61 @@
+name: flutter_application_1
+description: "A new Flutter project."
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.1
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  
+  cupertino_icons: ^1.0.8
+  provider: ^6.1.2
+  shared_preferences: ^2.4.0
+  flutter_iconly: ^1.0.2
+  shimmer: ^3.0.0
+  fancy_shimmer_image: ^2.0.3
+  dynamic_height_grid_view: ^0.0.4
+  card_swiper: ^3.0.1
+  ionicons: ^0.2.2
+  image_picker: ^1.1.2
+  uuid: ^4.5.1
+
+  firebase_core: ^3.12.0
+  firebase_auth: ^5.5.0
+  google_sign_in: ^6.2.2
+  cloud_firestore: ^5.6.4
+  firebase_storage: ^12.4.3
+
+  fluttertoast: ^8.2.12
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+
+
+
+flutter:
+
+ 
+  uses-material-design: true
+
+
+  assets:
+    - assets/images/
+    - assets/images/bag/
+    - assets/images/banners/
+    - assets/images/categories/
+    - assets/images/profile/
+
+  
