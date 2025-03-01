@@ -1,4 +1,4 @@
-# NexaMart
+# NexaMart - Mallesh Pareet
 Ecommerce Application Android and IOS
 📌 NexaMart - Your Ultimate E-Commerce Solution
 🚀 A feature-rich e-commerce application offering seamless shopping experiences!
