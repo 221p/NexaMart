@@ -3,11 +3,12 @@ import 'package:flutter_application_1/Widgets/subtitle_text.dart';
 import 'package:flutter_application_1/Widgets/title_text.dart';
 import 'package:flutter_application_1/providers/cart_provider.dart';
 import 'package:flutter_application_1/providers/product_provider.dart';
-
 import 'package:provider/provider.dart';
 
 class CartBottomCheckout extends StatelessWidget {
-  const CartBottomCheckout({super.key});
+  const CartBottomCheckout({super.key, required this.function});
+    final Function function;
+
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +44,9 @@ class CartBottomCheckout extends StatelessWidget {
                 ),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () async {
+                   await function();
+                },
                 child: Text("Checkout"),
               ),
             ],

@@ -14,14 +14,17 @@ class MyAppMethods {
       context: context,
       builder: (context) {
         return AlertDialog(
-          content: Column(
+          shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16.0)),
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
              
               Image.asset(
-                AssetsManager.warning,
-                height:  80,
-                width: 80,
+                IsError ? AssetsManager.error : AssetsManager.warning,
+                height:  60,
+                width: 60,
               ),
               const SizedBox(
                 height: 16.0,
@@ -37,11 +40,10 @@ class MyAppMethods {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Visibility(
-                    visible: IsError,
+                    // visible: IsError,  //Commented because  we want to show cancel button in both cases
                     child: TextButton(
                       onPressed: () {
                         Navigator.pop(context);
-                      
                       },
                       child:  SubtitleTextWidgets(
                         label: "Cancel",

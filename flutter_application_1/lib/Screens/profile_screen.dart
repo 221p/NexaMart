@@ -64,6 +64,7 @@ UserModel? userModel;
     final themeProvider = Provider.of<ThemeProvider>(context);
     return Scaffold(
         appBar: AppBar(
+          // backgroundColor: Colors.blueAccent,
           title: AppNameTextWidget(),
           leading: Image.asset(AssetsManager.shoppingCart),
         ),
