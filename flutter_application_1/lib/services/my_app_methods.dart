@@ -15,11 +15,13 @@ class MyAppMethods {
       builder: (context) {
         return AlertDialog(
           content: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
+             
               Image.asset(
                 AssetsManager.warning,
-                height: 60,
-                width: 60,
+                height:  80,
+                width: 80,
               ),
               const SizedBox(
                 height: 16.0,
@@ -39,8 +41,9 @@ class MyAppMethods {
                     child: TextButton(
                       onPressed: () {
                         Navigator.pop(context);
+                      
                       },
-                      child: const SubtitleTextWidgets(
+                      child:  SubtitleTextWidgets(
                         label: "Cancel",
                         color: Colors.green,
                       ),
@@ -64,6 +67,7 @@ class MyAppMethods {
       },
     );
   }
+  
   static Future<void> imagePickerDialog({
    required BuildContext context,
     required Function  cameraFCT,

@@ -15,6 +15,7 @@ import 'package:flutter_application_1/providers/cart_provider.dart';
 import 'package:flutter_application_1/providers/order_provider.dart';
 import 'package:flutter_application_1/providers/product_provider.dart';
 import 'package:flutter_application_1/providers/theme_provider.dart';
+import 'package:flutter_application_1/providers/user_provider.dart';
 import 'package:flutter_application_1/providers/viewed_prod_provider.dart';
 import 'package:flutter_application_1/providers/wishlist_provider.dart';
 import 'package:flutter_application_1/root_screen.dart';
@@ -87,6 +88,9 @@ class MyApp extends StatelessWidget {
               ),
               ChangeNotifierProvider(
                 create: (context) => OrderProvider(),
+              ),
+              ChangeNotifierProvider(create: 
+              (context) => UserProvider()
               ),
             ],
             child: Consumer<ThemeProvider>(
