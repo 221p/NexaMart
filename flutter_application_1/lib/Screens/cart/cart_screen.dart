@@ -41,8 +41,7 @@ class _CartScreenState extends State<CartScreen> {
             body: EmptyWidgetBag(
               imagePath: AssetsManager.shoppingBasket,
               title: "Your cart is empty",
-              subtitle:
-                  "Looks like your cart is empty add something and make me happy",
+              subtitle:"Looks like your cart is empty add something and make me happy",
               buttonText: "Shop now",
             ),
           )

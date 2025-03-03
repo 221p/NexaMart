@@ -31,6 +31,7 @@ class CartWidget extends StatelessWidget {
                 child: Row(
                   children: [
                     ClipRRect(
+                      
                       borderRadius: BorderRadius.circular(12),
                       child: FancyShimmerImage(
                         imageUrl: getCurrentProduct.productImage,
