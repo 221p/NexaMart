@@ -78,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
         body: Container(
           decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [Colors.blue.shade900, Colors.blue.shade300],
+              colors: [Colors.white, Colors.blue],
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
             ),
@@ -90,17 +90,19 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Center(
                 child: SingleChildScrollView(
                   child: Column(
-                 
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const AppNameTextWidget(fontsize: 35),
                       const SizedBox(height: 20),
-                      Text(
-                        "Welcome Back",
-                        style: GoogleFonts.lato(
-                            fontSize: 28,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
+                      Center(
+                        child: Text(
+                          "Welcome Back!",
+                          style: GoogleFonts.lato(
+                              fontSize: 28,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black
+                              ),
+                        ),
                       ),
                       const SizedBox(height: 20),
                       Form(
@@ -123,7 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     context, ForgotPasswordScreen.routeName),
                                 child: const Text("Forgot Password?",
                                     style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         decoration: TextDecoration.underline)),
                               ),
                             ),
@@ -203,13 +205,13 @@ class _LoginScreenState extends State<LoginScreen> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text("Don't have an account? ",
-            style: TextStyle(color: Colors.white)),
+            style: TextStyle(color: Colors.black)),
         TextButton(
           onPressed: () =>
               Navigator.pushNamed(context, RegisterScreen.routeName),
           child: const Text("Sign Up",
               style: TextStyle(
-                  color: Colors.white, decoration: TextDecoration.underline)),
+                  color: Colors.black, decoration: TextDecoration.underline)),
         ),
       ],
     );

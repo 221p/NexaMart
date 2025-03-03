@@ -10,11 +10,10 @@ import 'package:flutter_application_1/Screens/loading_manager.dart';
 import 'package:flutter_application_1/Widgets/app_name_text.dart';
 import 'package:flutter_application_1/Widgets/auth/image_picker_widget.dart';
 import 'package:flutter_application_1/Widgets/subtitle_text.dart';
-import 'package:flutter_application_1/Widgets/title_text.dart';
-
 import 'package:flutter_application_1/services/my_app_methods.dart';
 import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 
 class RegisterScreen extends StatefulWidget {
@@ -166,7 +165,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
         FocusScope.of(context).unfocus();
       },
       child: Scaffold(
-        body: LoadingManager(
+        
+         body: Container(
+          width: double.infinity, // Ensure it covers the full width
+        height: double.infinity, // Ensure it covers the full height
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              
+              colors: [Colors.white, Colors.blue],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              
+            ),
+          ),
+        child: LoadingManager(
           isLoading: isLoading,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -176,13 +188,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   const SizedBox(height: 60.0),
                   const AppNameTextWidget(fontsize: 30),
                   const SizedBox(height: 16.0),
-                  const Align(
-                    alignment: Alignment.centerLeft,
+                  Align(
+                    alignment: Alignment.center,
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        TitleTextWidgets(label: "Welcome"),
-                        SubtitleTextWidgets(label: "Your Welcome Message"),
+                         Text("Welcome to NexaMart!",
+                          style: GoogleFonts.lato(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                              ),
+                         Text( "Happy shopping! 🛍️",
+                          style: GoogleFonts.lato(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                         ),
                       ],
                     ),
                   ),
@@ -194,6 +218,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       pickedimage: _pickedImage,
                       function: () async {
                         await localImagePicker();
+
                       },
                     ),
                   ),
@@ -306,16 +331,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           width: double.infinity,
                           child: ElevatedButton.icon(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.blue,
+                              backgroundColor: Colors.white,
                               padding: const EdgeInsets.all(12),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
                             ),
                             icon: const Icon(IconlyLight.addUser),
-                            label: const Text(
+                            label:  Text(
                               "Sign Up",
-                              style: TextStyle(fontSize: 20),
+                              style: GoogleFonts.lato(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
                             ),
                             onPressed: () async {
                               _registerFct();
@@ -326,9 +355,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const SubtitleTextWidgets(
-                                label: "Already have an account? "),
-                            TextButton(
+                            const SubtitleTextWidgets( 
+                                label: "Already have an account? " , color: Colors.black,),
+                            TextButton(                             
                               onPressed: () {
                                 Navigator.pushNamed(
                                     context,
@@ -337,8 +366,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               },
                               child: const SubtitleTextWidgets(
                                 label: "Login",
-                                textDecoration: TextDecoration.underline,
-                                fontStyle: FontStyle.italic,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontStyle: FontStyle.normal,
                               ),
                             ),
                           ],
@@ -352,6 +382,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
           ),
         ),
       ),
+    ),
     );
   }
 }

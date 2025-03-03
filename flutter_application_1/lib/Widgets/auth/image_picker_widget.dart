@@ -22,7 +22,7 @@ class ImagePickerWidget extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.0),
                 border: Border.all(
-                  color: Colors.grey,
+                  color: Colors.black,
                 )
               ),
             ): Image.file(File(
@@ -37,7 +37,7 @@ class ImagePickerWidget extends StatelessWidget {
           bottom: 0,
           child: Material(
           borderRadius: BorderRadius.circular(16.0),
-          color: Colors.lightBlue,
+          color: const Color.fromARGB(255, 5, 5, 5),
           child: InkWell(
             splashColor: Colors.redAccent,
             borderRadius: BorderRadius.circular(16.0),

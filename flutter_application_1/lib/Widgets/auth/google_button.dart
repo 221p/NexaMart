@@ -74,9 +74,9 @@ class GoogleButton extends StatelessWidget {
         _googleSignIn(context: context);
       },
        icon: const Icon(Ionicons.logo_google,
-       color: Colors.redAccent,
+       color: Colors.red,
        ) ,
-        label: Text("Sign in with Google"),
+        label: Text("Sign in with Google" , style: TextStyle(color: Colors.black),),
         );
   }
 }

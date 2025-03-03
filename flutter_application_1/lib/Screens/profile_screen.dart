@@ -79,7 +79,7 @@ UserModel? userModel;
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: TitleTextWidgets(
-                        label: "Please Login to have Ultimate Experience"),
+                        label: "Please Login to have Ultimate Experience" , color: Colors.black,),
                   ),
                 ),
                 const SizedBox(
@@ -199,7 +199,7 @@ UserModel? userModel;
                           },
             
                          icon: Icon( user == null ? Icons.login : Icons.logout), 
-                         label: Text( user == null ? "Login" : "Logout"), 
+                         label: Text( user == null ? "Login" : "Logout" , ),
                          ),
                          ),
                     ],

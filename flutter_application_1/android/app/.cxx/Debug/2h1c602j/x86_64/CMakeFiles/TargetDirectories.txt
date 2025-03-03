@@ -1,0 +1,2 @@
+D:/NexaMart/flutter_application_1/android/app/.cxx/Debug/2h1c602j/x86_64/CMakeFiles/edit_cache.dir
+D:/NexaMart/flutter_application_1/android/app/.cxx/Debug/2h1c602j/x86_64/CMakeFiles/rebuild_cache.dir
