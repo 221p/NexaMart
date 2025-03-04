@@ -11,12 +11,10 @@ class AppNameTextWidget extends StatelessWidget {
     return Shimmer.fromColors(
         baseColor: Colors.purple,
         highlightColor: Colors.redAccent,
-        child: Center(
-          child: TitleTextWidgets(label: "NexaMart",
+       
+          child: TitleTextWidgets(label: "NexaMart", 
           fontSize: fontsize,
           ),
-        ),
-        
         );
   }
 }
