@@ -44,8 +44,8 @@ class CartBottomCheckout extends StatelessWidget {
                 ),
               ),
               ElevatedButton(
-                onPressed: () async {
-                   await function();
+                onPressed: ()  {
+            
                 },
                 child: Text("Checkout"),
               ),

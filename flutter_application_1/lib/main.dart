@@ -19,111 +19,88 @@ import 'package:flutter_application_1/providers/user_provider.dart';
 import 'package:flutter_application_1/providers/viewed_prod_provider.dart';
 import 'package:flutter_application_1/providers/wishlist_provider.dart';
 import 'package:flutter_application_1/root_screen.dart';
-
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
-      .then((_) {
-    runApp(const MyApp());
-  });
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<FirebaseApp>(
-        future: Firebase.initializeApp(
-          options: FirebaseOptions(
-              apiKey: AppConst.apiKey,
-              appId: AppConst.appId,
-              messagingSenderId: AppConst.messagingSenderId,
-              projectId: AppConst.projectId,
-              // storageBucket: AppConst.storageBucket, // 2/03/2025  This is not needed Beacuse Duplicatte bucket is already exits
-              ),
+      future: Firebase.initializeApp(
+        options: FirebaseOptions(
+          apiKey: AppConst.apiKey,
+          appId: AppConst.appId,
+          messagingSenderId: AppConst.messagingSenderId,
+          projectId: AppConst.projectId,
         ),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const MaterialApp(
-              debugShowCheckedModeBanner: false,
-              home: Scaffold(
-                body: Center(
-                  child: CircularProgressIndicator(),
-                ),
+      ),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
               ),
-            );
-          } else if (snapshot.hasError) {
-            return MaterialApp(
-              debugShowCheckedModeBanner: false,
-              home: Scaffold(
-                body: Center(
-                  child: SelectableText(
-                    snapshot.error.toString(),
-                  ),
-                ),
-              ),
-            );
-          }
-
-          return MultiProvider(
-            providers: [
-              ChangeNotifierProvider(
-                create: (context) => ThemeProvider(),
-              ),
-              ChangeNotifierProvider(
-                create: (context) => ProductProvider(),
-              ),
-              ChangeNotifierProvider(
-                create: (context) => CartProvider(),
-              ),
-              ChangeNotifierProvider(
-                create: (context) => WishlistProvider(),
-              ),
-              ChangeNotifierProvider(
-                create: (context) => ViewedProdProvider(),
-              ),
-              ChangeNotifierProvider(
-                create: (context) => OrderProvider(),
-              ),
-              ChangeNotifierProvider(create: 
-              (context) => UserProvider()
-              ),
-            ],
-            child: Consumer<ThemeProvider>(
-              builder: (context, themeProvider, child) {
-                return MaterialApp(
-                  title: 'Ecommerce',
-                  theme: Styles.themeData(
-                      isDarkTheme: themeProvider.getIsDarkTheme,
-                      context: context),
-                  home: const RootScreen(),
-                  routes: {
-                    ProductDetails.routename: (context) =>
-                    const ProductDetails(),
-                    WishlistScreen.routName: (context) =>
-                    const WishlistScreen(),
-                    ViewedRecently.routename: (context) =>
-                    const ViewedRecently(),
-                    LoginScreen.routeName: (context) => const LoginScreen(),
-                    RegisterScreen.routeName: (context) =>
-                    const RegisterScreen(),
-                    ForgotPasswordScreen.routeName: (context) =>
-                    const ForgotPasswordScreen(),
-                    SearchScreen.routename: (context) => 
-                    const SearchScreen(),
-                    RootScreen.routeName: (context) => 
-                    const RootScreen(),
-                    OrdersScreenFree.routeName: (context) =>
-                    const OrdersScreenFree(),
-                  },
-                );
-              },
             ),
           );
-        });
+        } else if (snapshot.hasError) {
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: Scaffold(
+              body: Center(
+                child: SelectableText(snapshot.error.toString()),
+              ),
+            ),
+          );
+        }
+
+        return MultiProvider(
+          providers: [
+            ChangeNotifierProvider(create: (_) => ThemeProvider()),
+            ChangeNotifierProvider(create: (_) => ProductProvider()),
+            ChangeNotifierProvider(create: (_) => CartProvider()),
+            ChangeNotifierProvider(create: (_) => WishlistProvider()),
+            ChangeNotifierProvider(create: (_) => ViewedProdProvider()),
+            ChangeNotifierProvider(create: (_) => OrderProvider()),
+            ChangeNotifierProvider(create: (_) => UserProvider()),
+          ],
+          child: Consumer<ThemeProvider>(
+            builder: (context, themeProvider, child) {
+              return MaterialApp(
+                title: 'Ecommerce',
+                debugShowCheckedModeBanner: false,
+                theme: Styles.themeData(
+                  isDarkTheme: themeProvider.getIsDarkTheme,
+                  context: context,
+                ),
+                home: const RootScreen(),
+                routes: {
+                  ProductDetails.routename: (context) => const ProductDetails(),
+                  WishlistScreen.routName: (context) => const WishlistScreen(),
+                  ViewedRecently.routename: (context) => const ViewedRecently(),
+                  LoginScreen.routeName: (context) => const LoginScreen(),
+                  RegisterScreen.routeName: (context) => const RegisterScreen(),
+                  ForgotPasswordScreen.routeName: (context) =>
+                      const ForgotPasswordScreen(),
+                  SearchScreen.routename: (context) => const SearchScreen(),
+                  RootScreen.routeName: (context) => const RootScreen(),
+                  OrdersScreenFree.routeName: (context) =>
+                      const OrdersScreenFree(),
+                },
+              );
+            },
+          ),
+        );
+      },
+    );
   }
 }

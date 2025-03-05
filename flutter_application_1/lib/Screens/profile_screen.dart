@@ -79,7 +79,7 @@ UserModel? userModel;
                   child: Padding(
                     padding: const EdgeInsets.all(20.0),
                     child: TitleTextWidgets(
-                        label: "Please Login to have Ultimate Experience" , color: Colors.black,),
+                        label: "Please Login to have Ultimate Experience",),
                   ),
                 ),
                 const SizedBox(
